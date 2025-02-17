@@ -1,0 +1,225 @@
+/* VARIABLES */
+/*===========*/
+:root {
+  --fa-version: "Font Awesome 6 Free";
+  --serif: Rufina, Georgia, "Times New Roman", serif;
+  --sans-serif: Oxygen, Helvetica, Arial, sans-serif;
+}
+
+/* Z-Index Hierachy: 3, 2, 1, 0 */
+
+/* BASE */
+/*======*/
+* {
+  transition: 175ms ease-in;
+}
+
+html,
+body {
+  font-family: var(--sans-serif);
+  font-size: 16px;
+  color: #333;
+}
+
+/* TYPOGRAPHY */
+/*============*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--serif);
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.serif {
+  font-family: var(--serif);
+}
+
+.sans-serif {
+  font-family: var(--sans-serif);
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.cta-btn:is(:link, :visited) {
+  display: inline-block;
+  background-color: #333;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.875rem 1.5rem;
+}
+
+.cta-btn:is(:hover, :focus) {
+  background-color: #191824;
+}
+
+/* UTILITIES */
+/*===========*/
+/* Backgrounds */
+/*-------------*/
+.hero-50::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  background-image: url("../img/bg-2.jpg");
+  background-size: cover;
+  background-position: 50% 75%;
+  width: 55vw;
+  height: 100%;
+  clip-path: polygon(0% 0%, 80% 0%, 95% 100%, 0% 100%);
+}
+
+/* LAYOUT */
+/*========*/
+/* Header */
+/*--------*/
+header {
+  position: fixed;
+  width: 100%;
+  padding: 1rem 2rem;
+  z-index: 3;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1.5rem;
+  list-style-type: none;
+}
+
+nav .cta-btn:is(:link, :visited) {
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+/* Sections */
+/*----------*/
+.cta-section {
+  /* background-image: url('../img/cta-bg.jpg'); */
+  background-position: 25% 45%;
+  background-size: cover;
+}
+
+/* Slides */
+/*--------*/
+.container {
+  max-width: 75vw;
+}
+
+/* DEPENDENCY OVERRIDES */
+/*======================*/
+/* fullPage.js */
+/*-------------*/
+.fp-arrow.fp-prev,
+.fp-arrow.fp-next {
+  border: 0;
+  margin: 0;
+  z-index: 2;
+}
+
+.fp-arrow.fp-prev {
+  left: 5vw;
+}
+
+.fp-arrow.fp-next {
+  right: calc(5vw + 10px);
+}
+
+.fp-arrow.fp-prev::before,
+.fp-arrow.fp-next::before {
+  font-family: var(--fa-version);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fp-arrow.fp-prev::before {
+  content: "\f053";
+}
+
+.fp-arrow.fp-next::before {
+  content: "\f054";
+}
+
+#fp-nav ul li,
+.fp-slidesNav ul li {
+  margin: 0;
+}
+
+/* Sections & Slides Bullet Nav List */
+/*-----------------------------------*/
+#fp-nav ul,
+.fp-slidesNav ul {
+  display: flex;
+  gap: 0.875rem;
+}
+
+/* Section */
+#fp-nav.fp-right {
+  top: unset;
+  bottom: 1rem;
+}
+
+#fp-nav ul {
+  flex-direction: column;
+}
+
+/* Slide */
+.fp-slidesNav.fp-bottom {
+  bottom: 2rem;
+}
+
+.fp-slidesNav ul {
+  display: flex;
+  justify-content: center;
+}
+
+.fp-tooltip {
+  font-family: var(--serif) !important;
+  font-weight: 600;
+  color: #333 !important;
+  top: -4px !important;
+}
+
+.fp-watermark {
+  display: none;
+}
+
+/* PLACEHOLDERS */
+/*==============*/
+.card-ph {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 350px;
+  padding: 2rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+
